@@ -145,6 +145,7 @@ class HomeController extends Controller
                 echo $book->title." ";
             }
             echo  "<br>";
+            echo  "<br>";
             // 根據實際的書籍屬性印出更多信息
         }
 
