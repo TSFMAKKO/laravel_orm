@@ -15,6 +15,12 @@ class CreateBookstoresTable extends Migration
     {
         Schema::create('bookstores', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
+                
             $table->timestamps();
         });
     }

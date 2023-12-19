@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bookstore extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['user_id','name'];
     use HasFactory;
 
     // 多對多

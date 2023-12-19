@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Comment;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ReplyFactory extends Factory
@@ -18,6 +19,7 @@ class ReplyFactory extends Factory
         $commentIds = Comment::pluck('id')->toArray();
         return [
             //
+            'user_id' =>  User::inRandomOrder()->first()->id,
             'content' => $this->faker->paragraph,
             'comment_id' => $this->faker->randomElement($commentIds),
             

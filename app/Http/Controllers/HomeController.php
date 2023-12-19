@@ -106,6 +106,9 @@ class HomeController extends Controller
         // 其實不用with沒關係
         // $bookstore1 = Bookstore::with('books')->find(1);
         // 書店一的所有書
+        echo "<h1>資料庫多對多範例</h1><br>";
+        
+        echo "<h2>書店一有哪些書籍:此書在那些書店也有</h2>";
         $booksInBookstore1 = $bookstore1->books;
         // echo $booksInBookstore1->books[0];
         // dd($booksInBookstore1); // 使用 dd 输出
@@ -122,6 +125,9 @@ class HomeController extends Controller
 
         echo  "<br><br><br>";
 
+
+        
+        echo "<h2>書店二有哪些書籍:此書在那些書店也有</h2>";
         $booksInBookstore2 = $bookstore2->books;
         // dd($booksInBookstore2); // 使用 var_dump 输出
         foreach ($booksInBookstore2 as $book) {
@@ -137,6 +143,8 @@ class HomeController extends Controller
         echo  "<br><br><br>";
 
         // 获取book1在哪些書店
+        
+        echo "<h2>書本1尋找在那些書店:此書店還有甚麼書籍</h2>";
         $bookstoreOfBook1 = $book1->bookstores;
         // dd($bookstoreOfBook1); // 使用 dd 输出
         foreach ($bookstoreOfBook1 as $bookstore) {
@@ -152,7 +160,7 @@ class HomeController extends Controller
 
         echo  "<br><br><br>";
 
-        
+        echo "<h2>書本2尋找在那些書店:此書店還有甚麼書籍</h2>";
         // 获取book2在哪些書店
         $bookstoreOfBook2 = $book2->bookstores;
         // dd($bookstoreOfBook2); // 使用 var_dump 输出

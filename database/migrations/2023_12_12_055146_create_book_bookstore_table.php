@@ -17,6 +17,13 @@ class CreateBookBookstoreTable extends Migration
             $table->id();
             $table->unsignedBigInteger('bookstore_id');
             $table->unsignedBigInteger('book_id');
+            $table->unsignedBigInteger('user_id')->nullable();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
+                
+                
            
             $table->timestamps();
 

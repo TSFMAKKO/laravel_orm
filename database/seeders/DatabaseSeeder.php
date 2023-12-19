@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         Post::factory(5)->create()->each(function ($post) {
-            Comment::factory(3)->create(['post_id' => $post->id])->each(function ($comment) {
-                Reply::factory(2)->create(['comment_id' => $comment->id]);
+            Comment::factory(5)->create(['post_id' => $post->id])->each(function ($comment) {
+                Reply::factory(5)->create(['comment_id' => $comment->id]);
             });
         });
     }

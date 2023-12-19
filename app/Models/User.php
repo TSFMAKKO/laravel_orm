@@ -41,4 +41,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 一對多
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    // 一對多
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    // 一對多
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }
